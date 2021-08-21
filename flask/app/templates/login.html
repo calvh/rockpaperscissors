@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% set active_page = "login" %}
+{% block head_css%} <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}"/> {% endblock %}
+{% block title %} Login {% endblock %}
+{% block content %}
+
+<body> 
+    <h2>Log In Here!</h2>
+    <form method="POST" id="login-form">
+        <div id="username">
+            <label for="username">Username</label>
+            <input type="text"  name="username" required>
+            <br>
+        </div>
+        <div id="password">
+            <label for="password">Password</label>
+            <input type="password"  name="password" required>
+            <br><br>
+        </div>
+        <input id="submitLogin" type="submit" value="Login"><br>
+        Don't have an Account? 
+        <a href="/auth/register/">
+            Register Here!
+        </a>
+    </form>
+</body>
+{% endblock %}
